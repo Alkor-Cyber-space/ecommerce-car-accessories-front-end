@@ -51,11 +51,10 @@ const Navbar = ({ bgColor = "bg-transparent" }) => {
             <Link
               key={link.path}
               to={link.path}
-              className={`relative py-1 transition-colors duration-200 ${
-                isActive
+              className={`relative py-1 transition-colors duration-200 ${isActive
                   ? "text-[#ff9200] font-semibold"
                   : "text-white hover:text-[#ff9200]"
-              }`}
+                }`}
             >
               {link.label}
               {isActive && (
@@ -114,11 +113,10 @@ const Navbar = ({ bgColor = "bg-transparent" }) => {
                 key={link.path}
                 to={link.path}
                 onClick={handleClose}
-                className={`text-base font-medium py-1 transition-colors ${
-                  location.pathname === link.path
+                className={`text-base font-medium py-1 transition-colors ${location.pathname === link.path
                     ? "text-[#ff9200] font-semibold"
                     : "text-white hover:text-[#ff9200]"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>

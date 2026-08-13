@@ -15,3 +15,14 @@
 .scrollbar-none::-webkit-scrollbar {
   display: none;        
 }
+
+.hero-radial-bg {
+  background: radial-gradient(circle at center, #0050d8 0%, #031c4e 65%, #010e2d 100%);
+}
+
+@media (min-width: 768px) {
+  .hero-radial-bg {
+    background: radial-gradient(circle at 75% 50%, #0052cc 0%, #03173d 60%, #010b21 100%);
+  }
+}
+
