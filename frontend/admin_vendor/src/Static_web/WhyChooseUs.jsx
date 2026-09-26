@@ -16,7 +16,7 @@ const WhyChooseUs = () => {
     {
       icon: image2,
       title: "Verified Vendors",
-      description: "Products listed only by approved and trusted sellers",
+      description: "Products listed only by approved and trusted SellerS",
     },
     {
       icon: image3,
