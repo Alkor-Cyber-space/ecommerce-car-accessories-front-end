@@ -1,8 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 //  Load from localStorage (if exists)
-const savedSteps = JSON.parse(localStorage.getItem("vendor_completed_steps") || "[]");
-const savedCurrentStep = parseInt(localStorage.getItem("vendor_current_step") || "0");
+let savedSteps = [];
+let savedCurrentStep = 0;
+try {
+  savedSteps = JSON.parse(localStorage.getItem("vendor_completed_steps") || "[]");
+  savedCurrentStep = parseInt(localStorage.getItem("vendor_current_step") || "0");
+} catch (e) {
+  console.warn("localStorage is not available:", e);
+}
 
 const initialState = {
   // Auth

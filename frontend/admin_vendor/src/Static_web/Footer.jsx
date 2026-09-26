@@ -50,13 +50,13 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/carooainternational?utm_source=qr" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#ff9200] transition-colors">
+              <a href="https://www.instagram.com/carooainternational/" className="flex items-center gap-2 hover:text-[#ff9200] transition-colors">
                 <FaInstagram className="shrink-0" />
                 <span>Instagram</span>
               </a>
             </li>
             <li>
-              <a href="https://www.facebook.com/share/1EjFzZAjoi/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#ff9200] transition-colors">
+              <a href="https://www.facebook.com/share/1EjFzZAjoi/?mibextid=wwXIfr" className="flex items-center gap-2 hover:text-[#ff9200] transition-colors">
                 <FaFacebook className="shrink-0" />
                 <span>Facebook</span>
               </a>

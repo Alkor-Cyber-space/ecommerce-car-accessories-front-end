@@ -105,20 +105,29 @@ function App() {
     generateToken();
 
     // ✅ Token expiry check
-    const accessToken = localStorage.getItem("access_token");
+    let accessToken = null;
+    try {
+      accessToken = localStorage.getItem("access_token");
+    } catch (e) {
+      console.warn("localStorage is not available:", e);
+    }
     if (accessToken) {
       try {
         const decoded = parseJwt(accessToken);
         if (decoded && decoded.exp * 1000 < Date.now()) {
           // Token expired — clear and redirect
-          localStorage.removeItem("access_token");
-          localStorage.removeItem("refresh_token");
+          try {
+            localStorage.removeItem("access_token");
+            localStorage.removeItem("refresh_token");
+          } catch(e) {}
           navigate("/login"); // or "/signin"
         }
       } catch (error) {
         // Invalid token — redirect to login
-        localStorage.removeItem("access_token");
-        localStorage.removeItem("refresh_token");
+        try {
+          localStorage.removeItem("access_token");
+          localStorage.removeItem("refresh_token");
+        } catch(e) {}
         navigate("/login");
       }
     }
@@ -135,11 +144,13 @@ function App() {
   }, []);
 
   const PublicRoute = ({ children, redirectTo }) => {
-    const token = localStorage.getItem("access_token");
+    let token = null;
+    try { token = localStorage.getItem("access_token"); } catch (e) {}
     return token ? <Navigate to={redirectTo} replace /> : children;
   };
   const ProtectedRoute = ({ children, redirectTo }) => {
-    const token = localStorage.getItem("access_token");
+    let token = null;
+    try { token = localStorage.getItem("access_token"); } catch (e) {}
     return token ? children : <Navigate to={redirectTo} replace />;
   };
 
