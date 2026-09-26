@@ -89,7 +89,7 @@ const Home = () => {
           </div>
           <h3 className="font-bold text-xl text-[#0a1c3e] text-center mt-2">Secure Shopping</h3>
           <p className="text-sm mt-3 text-slate-500 text-center leading-relaxed">
-            Your data and transactions are 100% safe with u\s.
+            Your data and transactions are 100% safe with us.
           </p>
         </div>
       </section>
